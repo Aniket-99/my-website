@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Ajax-4 - Php and Ajax form
+	</title>
+</head>
+<body>
+
+	<button id="button">Get Name</button>
+
+	<h1>Normal Get form</h1>
+	<hr>
+	<form method="GET" action="process.php">
+		<input type="text" name="name">
+		<input type="submit" name="" value="submit">
+	</form>
+
+	<h1>Ajax Get form</h1>
+	<hr>
+	<form id="getForm">
+		<input type="text" name="name" id="name1">
+		<input type="submit" name="" value="submit">
+	</form>
+	<h2 id="nameVal"></h2>
+
+
+	<h1>Normal Post form</h1>
+	<hr>
+	<form method="POST" action="process.php">
+		<input type="text" name="name">
+		<input type="submit" name="" value="submit">
+	</form>
+
+	<h1>Ajax Post form</h1>
+	<hr>
+	<form id="postForm">
+		<input type="text" name="name" id="name2">
+		<input type="submit" name="" value="submit">
+	</form>
+	<h2 id="postNameVal"></h2>
+
+	<script type="text/javascript">
+		document.getElementById('button').addEventListener("click", getName);
+		document.getElementById('getForm').addEventListener("submit", getName);
+		document.getElementById('postForm').addEventListener("submit", postName);
+
+
+		//get form
+		function getName(e) {
+			e.preventDefault();
+			var xhr = new XMLHttpRequest();
+			var name = document.getElementById('name1').value;
+			xhr.open("GET",'process.php?name='+name,true);
+
+			xhr.onload = function() {
+				if (this.status == 200) {
+					//console.log(this.responseText);
+					document.getElementById("nameVal").innerHTML = this.responseText;
+				}	
+			}
+
+			xhr.send();
+		}
+
+		//Post form
+
+		function postName(e) {
+			e.preventDefault();
+			var xhr = new XMLHttpRequest();
+			var name = document.getElementById('name2').value;
+
+			var params = "name="+name;
+
+			xhr.open("POST",'process.php',true);
+			//for post method,set request header
+
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+			xhr.onload = function() {
+				if (this.status == 200) {
+					//console.log(this.responseText);
+					document.getElementById("postNameVal").innerHTML = this.responseText;
+				}	
+			}
+
+			xhr.send(params);
+		}
+
+
+	</script>
+
+</body>
+</html>
