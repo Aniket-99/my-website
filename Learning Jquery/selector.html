@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Selectors</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 17px;
+			font-family: all;
+			background-color: #f4f4f4;
+			line-height: 1.5em;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Jquery Tutorial</h1>
+	</header>
+
+
+	<div id="container">
+		
+		<!-- <h1 id="heading1">Heading One</h1>
+		<p id="para1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for <span>previewing layouts</span> and visual mockups.</p>
+
+		<h1 class="heading2">Heading Two</h1>
+		<p class="para2">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for <span>previewing layouts</span> and visual mockups.</p>
+
+		<ul id="list">
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+		</ul>
+
+		<input type="button" name="button" value="Button 1">
+		<input type="submit" name="submit" value="Submit">
+		<input type="text" name="">
+
+		<a href="https://google.com">Google</a>
+		<a href="https://yahoo.com">Yahoo</a> -->
+
+		<button id="btn1">Button 1</button>
+		<button id="btn2">Button 2</button>
+		<p class="para1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for <span>previewing layouts</span> and visual mockups.</p>
+
+		<!-- <h1 id="coords"></h1> -->
+		<hr>
+
+		<form id="form">
+			<label>Name</label><br>
+			<input type="text" id="name" name="name">
+			<br>
+			<label>Email</label><br>
+			<input type="text" id="email" name="email">
+			<br>
+			<label>Gender</label><br>
+			<select id="gender" name="gender">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+
+	</div>
+
+	<script type="text/javascript">
+		// $('.heading2').hide();
+		// $('#heading1').hide();
+		//$('p span').css('color','blue');
+
+		// $('ul#list li:first').css('color','red');
+		// $('ul li:last').css('color','blue');
+		// $('ul li:even').css('font-size','25px');
+		// $('ul li:odd').css('font-size','30px');
+		// $('ul li:nth-child(3n)').css('list-style','none');
+
+		// $(':submit').hide();
+
+		// $('[href]').css('color','red');
+		// $('a[href="https://yahoo.com"]').css('color','green');
+		//$('*').hide(); // Will hide everything
+
+//--------------------------------------------------
+		$(document).ready(()=>{
+		// 	$('#btn1').click(()=>{
+		// 		//$('.para1').hide();
+		// 		$('.para1').toggle();
+		// 	});
+
+		// 	$('#btn2').click(()=>{
+		// 		$('.para1').show();
+		// 	});
+		// });
+
+		// $('#btn1').dblclick(()=>{	// on double click
+		// 	$('.para1').toggle();
+		// });
+
+		// $('#btn1').hover(()=>{ // this is a combination of both the below functions
+		// 	$('.para1').toggle();
+		// });
+		
+		// $('#btn1').on('mouseenter',()=>{
+		// 	$('.para1').toggle();
+		// });
+
+		// $('#btn1').on('mouseleave',()=>{
+		// 	$('.para1').toggle();
+		// });
+
+
+		// $('#btn1').on('mousemove',()=>{
+		// 	$('.para1').toggle();
+		// });
+
+		// $('#btn1').on('mousedown',()=>{
+		// 	$('.para1').toggle();
+		// });
+
+		// $('#btn1').on('mouseup',()=>{
+		// 	$('.para1').toggle();
+
+		//$('#btn1').click((e)=>{
+			//alert(e.currentTarget.innerHTML);
+			//alert(e.currentTarget.outerHTML);
+		//});
+
+
+		 // $(document).on('mousemove',(e)=>{
+		 // 	$('#coords').html('Coordinates: Y:'+e.clientY+"x: "+e.clientX);
+		 // });
+
+		 // $('input').focus(()=>{
+		 // 	//alert('focused');
+		 // 	$(this).css('background','green');
+		 // });
+
+		 //  $('input').blur(()=>{
+		 // 	//alert('focused');
+		 // 	$(this).css('background','white');
+		 // });
+
+		 // $('input').keyup((e)=>{
+		 // 	console.log(e.target.value);
+		 // });
+
+
+		 // $('input').keydown(()=>{
+		 // 	console.log('keydown');
+		 // });
+
+		 $('select#gender').change((e)=>{
+		 	alert(e.target.value);
+		 });
+
+		 $('#form').submit((e)=>{
+		 	e.preventDefault();
+		 	var name = $('input#name').val();
+		 	console.log(name);
+		 });
+
+
+	});
+
+	</script>
+
+
+</body>
+</html>
