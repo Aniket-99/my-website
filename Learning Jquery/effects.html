@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Selectors</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 17px;
+			font-family: all;
+			background-color: #f4f4f4;
+			line-height: 1.5em;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+		#box {
+			background:#333;
+			padding: 50px;
+			color: #fff;
+			height: 90px;
+			width: 500px;
+			text-align: center;
+		}
+
+		#box2{
+			background: red;
+			width: 100px;
+			height: 100px;
+			position: relative;
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Jquery Tutorial</h1>
+	</header>
+
+
+	<div id="container">
+		<button id="btnFadeOut">Fade Out</button>
+		<button id="btnFadeIn">Fade In</button>
+		<button id="btnFadeToggle">Fade Toggle</button>
+		<hr>
+		<button id="btnSlideUp">Slide Up</button>
+		<button id="btnSlideDown">Slide down</button>
+		<button id="btnSlideToggle">Slide Toggle</button>
+		<button id="btnStop">Stop</button>
+		<hr>
+		<div id="box"><h1>Aniket</h1></div>
+		<hr>
+		<button id="moveLeft">Move Left</button>
+		<button id="moveRight">Move Right</button>
+		<button id="moveAround">Move Around</button>
+		<div id="box2"></div>
+	</div>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('#btnFadeOut').click(()=>{
+				$('#box').fadeOut(3000, ()=>{
+					$('#btnFadeOut').text('Its invisible now!!');
+				});
+			});
+
+			$('#btnFadeIn').click(()=>{
+				$('#box').fadeIn(3000);
+			});
+
+			$('#btnFadeToggle').click(()=>{
+				$('#box').fadeToggle(2000);
+			});
+
+
+			//-------------------------------------
+
+			$('#btnSlideDown').click(()=>{
+				$('#box').slideDown(3000);
+			});
+
+
+			$('#btnSlideUp').click(()=>{
+				$('#box').slideUp(3000);
+			});
+
+
+			$('#btnSlideToggle').click(()=>{
+				$('#box').slideToggle(3000);
+			});
+
+			$('#btnStop').click(()=>{
+				$('#box').stop();
+			});
+
+			// ------------animation using animate-------------------------------------
+
+			$('#moveRight').click(()=>{
+				$('#box2').animate({
+					left : 500,
+					height:"300px",
+					width:"300px",
+					opacity:"0.5"
+				});
+			});
+
+			$('#moveLeft').click(()=>{
+				$('#box2').animate({
+					left : 0,
+					height : '100px',
+					width : '100px',
+					opacity : '1'
+				});
+			});
+			$('#moveAround').click(()=>{
+				var box2 = $('#box2');
+				box2.animate({
+					left : 300
+				});
+
+				box2.animate({
+					top : 300
+				});
+
+				box2.animate({
+					left : 0,
+					top: 300
+				});
+
+				box2.animate({
+					left : 0,
+					top : 0
+				});
+
+			});
+
+		});
+		
+	</script>
+
+
+</body>
+</html>
