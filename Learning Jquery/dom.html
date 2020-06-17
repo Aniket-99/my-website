@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Selectors</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 17px;
+			font-family: all;
+			background-color: #f4f4f4;
+			line-height: 1.5em;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+
+		.myClass {
+			color: green;
+			background:pink;
+		}
+
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Jquery Tutorial | DOM Manipulation</h1>
+	</header>
+
+
+	<div id="container">
+		<button class="btn1">Button 1</button>	
+		<p class="para1">This is a paragraph</p>
+		<p class="para2">This is another paragraph</p>
+		<div id="myDiv"></div>
+		<h3>Add New Items</h3>
+		<input type="text" name="" id="newItem">
+		<ul id="list">
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+			<li>List Item 4</li>
+		</ul>
+
+		<h2>Users:</h2>
+		<ul id="users"></ul>
+		<a href="https://google.com">Google</a>
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(()=>{
+			//$('.para1').css({color:'red',background:'#ccc'});
+			//$('.para2').addClass('myClass');
+			// $(".btn1").click(()=>{
+			// 	$('.para1').toggleClass('myClass');
+			// });
+
+			// $('ul').append('<li>List Item 5</li>');
+			// $('ul').prepend('<li>List Item 0</li>');
+
+			// $('.para1').appendTo('.para2');
+			// $('.para1').prependTo('.para2');
+
+			// $('ul').before('<h4>Before</h4>');
+			// $('ul').after('<h4>After</h4>');
+			// $('ul').empty(); // Remove list items but maintains ul
+			// $('ul').detach(); // Removes the unordered list
+			// $('a').attr('target','_blank');
+			// $('a').removeAttr('target');
+
+			//$('p').wrap('<h1>');
+			//$('p').wrapAll('<h1>');
+
+			$('#newItem').keyup((e)=>{
+				var code = e.which;
+				if (code == 13) {
+					e.preventDefault();
+					$('ul').append('<li>'+ e.target.value +'</li>');
+					e.target.value = "";
+				}
+			});
+
+			// var names = ['Aniket','kaushik','Vinay', 'amit'];
+
+			// $.each(names,(i, val)=>{
+			// 	$('#users').append('<li>'+ val +'</li>')
+			// });
+
+			var names = $('ul#list li').toArray();
+			$.each(names,(i, val)=>{
+				console.log(val.innerHTML);
+			});
+
+		});
+	</script>
+
+
+</body>
+</html>
