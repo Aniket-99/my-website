@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap Registration form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<h1 style="text-align: center;">Registration Form</h1>
+	<form method="POST" action="#">
+
+	  <div class="form-group">
+    	<label for="fname">First Name:</label>
+    	<input type="text" class="form-control m-1" id="fname" placeholder="Eg: Aniket" required>
+  	  </div>
+
+  	  <div class="form-group">
+    	<label for="lname">Last Name:</label>
+    	<input type="text" class="form-control m-1" id="lname" placeholder="Eg: Karmakar" required>
+  	  </div>
+
+	  <div class="form-group">
+	    <label for="email">Email address:</label>
+	    <input type="email" class="form-control m-1" id="email" placeholder="Enter email" required>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="username">Username: </label>
+	    <input type="password" class="form-control m-1" id="username" placeholder="Username" required>
+	  </div>
+
+	<label>Languages Known:</label>
+	<div class="form-check">
+	  <input class="form-check-input m-1" type="checkbox" value="" id="java">
+	  <label class="form-check-label m-1" for="java">
+	    Java
+	  </label>
+	</div>
+
+	<div class="form-check">
+	  <input class="form-check-input m-1" type="checkbox" value="" id="python">
+	  <label class="form-check-label m-1" for="python">
+	    Python
+	  </label>
+	</div>
+
+	<div class="form-check">
+	  <input class="form-check-input m-1" type="checkbox" value="" id="Javascript">
+	  <label class="form-check-label m-1" for="Javascript">
+	    Javascript
+	  </label>
+	</div>
+
+	<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Prefered Location: </label>
+	<div class="form-check">
+  		<select class="custom-select my-1 mr-sm-2" id="location">
+    		<option selected>Choose...</option>
+    		<option value="Mumbai">Mumbai</option>
+    		<option value="Pune">Pune</option>
+    		<option value="Bangalore">Bangalore</option>
+    		<option value="Kolkata">Kolkata</option>
+  		</select>
+  	</div>
+
+	  <button type="submit" class="btn btn-primary m-4">Submit</button>
+	  <button type="reset" class="btn btn-danger m-4">Reset</button>
+	</form>
+</div>
+
+
+</body>
+</html>
