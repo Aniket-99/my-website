@@ -1,0 +1,64 @@
+h1{
+		text-align: center;
+    color: #154360;
+}
+body {
+  background: #CCD1D1;
+}
+
+table {
+		font-family: arial, sans-serif;
+    font-weight: bold;
+		border-collapse: collapse;
+		width: 100%;
+		margin: 20px;
+		padding: 20px;
+    border: 2px solid black;
+}
+
+td{
+		border: 1px solid #34495E;
+		text-align: left;
+		padding: 15px;
+}
+
+tr:nth-child(even) {
+		background-color: #dddddd;
+}
+
+input{
+	border-radius: 2px;
+  height: 20px;
+}
+.iframe-div {
+  float: right;
+  width: 50%;
+  margin: 10px;
+}
+.form-div{
+  margin-left: 10px; 
+  width: 500px;
+}
+
+.submitBtn{
+  background: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.resetBtn{
+  background: white;
+  color: black;
+  border: 2px solid #CB4335;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}
